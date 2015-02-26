@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="Main">
+        <div class="MainNavigation">
+             <div class="WebsiteTitle"> Serguei Fedorov </div>
+             <div class="Navigation"> </div>
+        </div>
+
+        <div style="margin-top: 100px;">
+            @RenderBody()
+        </div>
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </div>
+    <div class="Footer">
+        <div class="FooterElement">
+                API | Site Source Code | Source Code Documentation<br />
+                Site Created By Serguei Fedorov
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.get("@(PersonalWebsite.Code.Tools.RootURL + "navigation/getWebsiteLinks")", null, function (result) 
+        {
+            $.each(result.Items, function (currentIndex, currentItem) {
+                $(".Navigation").append("<div class='MainLink'><a href='" + currentItem.Link + "'> " + currentItem.Text + " </a> </div>");
+            });
+        });
+    });
+</script>

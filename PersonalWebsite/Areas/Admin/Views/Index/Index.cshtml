@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    foreach(PersonalWebsite.Areas.Admin.Models.AdminMenuItemModel menu in Model.menuItems)
+    {
+        <a href="@menu.Href">
+            <div style="width: 200px;
+                    margin: 5px; 
+                    background-image: url(../content/stripe_rot_90.png);
+                    border-radius: 10px;
+                    border: 3px solid black;
+                    -webkit-box-shadow: inset 1px 8px 40px -10px rgba(0,0,0,0.57);
+                    -moz-box-shadow: inset 1px 8px 40px -10px rgba(0,0,0,0.57);
+                    box-shadow: inset 1px 8px 40px -10px rgba(0,0,0,0.57);
+                    float: left;">
+                <div style="background: #FFB73B; border-top-left-radius: 8px; border-top-right-radius: 8px; font-size: 14px; padding: 2px; font-weight: bold;">@menu.Name</div>
+                <div style="padding: 5px; display: table; margin: 0 auto;">
+                     <div><img src="@menu.Image" style="max-width: 100%; max-height: 100px; " /></div>
+                </div>
+            </div>
+        </a>
+    }
+}

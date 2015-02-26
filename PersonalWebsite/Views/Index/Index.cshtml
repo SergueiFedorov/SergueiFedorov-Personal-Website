@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    //All this needs to be moved into the API somehow
+    function determineContentTitle(dataType) {
+        switch (dataType) {
+            case "NEWS_COLLECTION":
+                {
+                    return "News";
+                    break;
+                };
+            case "PROFILE":
+                {
+                    return "About Me";
+                    break;
+                }
+            case "MAIN_SITE_LINKS":
+                {
+                    return "Navigation";
+                    break;
+                }
+            case "HOW_SITE_WORKS":
+                {
+                    return "How This Site Works";
+                }
+        }
+    }
+
+    function determineContentLocation(dataType) {
+        switch (dataType)
+        {
+            case "NEWS_COLLECTION":
+                {
+                    return "Content/HTMLElements/NewsPost.html";
+                    break;
+                };
+            case "PROFILE":
+                {
+                    return "Content/HTMLElements/Profile.html";
+                    break;
+                };
+            case "MAIN_SITE_LINKS":
+                {
+                    return "Content/HTMLElements/Link.html";
+                    break;
+                }
+            case "HOW_SITE_WORKS":
+                {
+                    return "Content/HTMLElements/HowThisSiteWorks.html"
+                }
+        }
+    }
+
+    $(document).ready(function () {
+        //Obtain the moduels
+        $.get('Index/Modules', '', function (elements) {
+            $.each(elements, function (index, currentElement) {
+                //Generate an ID for the module
+                var moduleID = "MODULE-" + index;
+                
+                //Add the module container to the page
+                $(".Main").append("<div class='moduleElement' id='" + moduleID + "' style='width: " + currentElement.Width + "px; '></div>");
+
+                //Call the controller for this particular module
+                $.get(currentElement.DataController, '', function (controllerData) {
+
+                    $("#" + moduleID).append("<div class='ModuleTitle'>" + determineContentTitle(controllerData.Type) + " </div>");
+
+                    //Get the internal items
+                    $.each(controllerData.Items, function (controllerItemIndex, controllerItem) {
+
+                        //Generate a sub-module ID. This allows me to append multiple elements using the .Load
+                        //functionality
+                        var subModuleID = moduleID + "-" + controllerItemIndex;
+
+                        //Append a holder div
+                        $("#" + moduleID).append("<div id='" + subModuleID + "'/>");
+
+                        //Load content into the holder
+                        $("#" + subModuleID).load(determineContentLocation(controllerData.Type), function () {
+                            var content = $(this).html();
+
+                            console.log(controllerData.Type);
+
+                            //Determine the type of content to process
+                            if (controllerData.Type == "NEWS_COLLECTION") {
+                                //Fix the datetime string. This particular snippit is with the help of
+                                //http://stackoverflow.com/questions/1016847/converting-net-datetime-to-json
+                                //To leave credit where it is due
+                                var re = /-?\d+/;
+                                var m = re.exec(controllerItem.PostedDate);
+                                var date = new Date(parseInt(m[0])).toLocaleString();
+
+                                content = content.replace("__NEWS_TITLE__", controllerItem.Title);
+                                content = content.replace("__NEWS_TEXT__", controllerItem.Text);
+                                content = content.replace("__NEWS_DATE__", date);
+                            }
+
+                            if (controllerData.Type == "PROFILE") {
+                                content = content.replace("__PROFILE_INFORMATION__", controllerItem.AboutText);
+                                content = content.replace("__PROFILE_PICTURE__", controllerItem.ProfilePicture);
+                            }
+
+                            if (controllerData.Type == "HOW_SITE_WORKS") {
+
+                                content = content.replace("__BRIEF__", controllerItem.Brief);
+
+                            }
+
+                            $(this).html(content);
+                        });
+                    });
+                });
+            });
+
+        });
+    });
+
+</script>

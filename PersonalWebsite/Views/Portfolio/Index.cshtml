@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var index = 0;
+        $.get('Portfolio/Items', '', function (elements) {
+            $.each(elements, function (index, currentElement) {
+                var elementID = "PORTFOLIO-ITEM-" + index;
+
+                $(".Main").append("<div class='moduleElement' id='" + elementID + "' style='width:420px; min-height: 280px; position: relative;'></div>");
+                $("#" + elementID).append("<div class='ModuleTitle'>" + currentElement.Title + "</div>");
+                $("#" + elementID).append("<div id='" + elementID + "_Content' style='position:absolute; bottom: 10px; top: 50px;'></div>");
+
+                $("#" + elementID + "_Content").load("Content/HTMLElements/PortfolioItem.html", function () {
+
+                    //console.log(elementID);
+
+                    var content = $(this).html();
+                    content = content.replace("__PORTFOLIO_TEXT__", currentElement.Text);
+                    content = content.replace("__PORTFOLIO_IMAGE__", currentElement.Image);
+
+                    $(this).html(content);
+
+                    //var iconsHolders = $('<div style="clear: both; padding-top: 10px; padding-right: 15px;"/>');
+                    $(this).append(iconsHolders);
+                    var iconsHolders = $(this).find(".Icons");
+
+
+                    $.each(currentElement.Links, function (index, link) {
+                        iconsHolders.append($("<div style='float:right; padding-left: 5px;'>")
+                                        .append("<a href='" + link.url + "'><img style='height:32px;' src='" + link.icon + "' /></a>")
+                                     );
+                    });
+                });
+
+            });
+        });
+    });
+</script>
