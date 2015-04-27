@@ -19,7 +19,7 @@
                 var elementID = "PORTFOLIO-ITEM-" + index;
 
                 var element = $("<div class='moduleElement panel panel-default' style='width:450px; height:300px; position: relative;'></div>");
-                element.append("<div class='panel-heading'>" + currentElement.Title + "</div>");
+                element.append("<div class='panel-heading'><h3 class='panel-title'>" + currentElement.Title + "</h3></div>");
                 element.append("<div class='panel-body' ></div>");
 
                 $(".panel-body", element).load("Content/HTMLElements/PortfolioItem.html", function () {

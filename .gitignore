@@ -2,3 +2,8 @@
 *.*.config
 
 !/foo/obj/*
+!PersonalWebsite.Azure
+!PersonalWebsite/Web.config
+!PersonalWebsite/Web.Debug.config
+!PersonalWebsite/Web.Release.config
+

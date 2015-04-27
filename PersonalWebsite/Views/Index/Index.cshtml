@@ -81,7 +81,7 @@
                         var subModuleID = moduleID + "-" + controllerItemIndex;
 
                         //Append a holder div
-                        $("#" + moduleID).append("<div class='panel-body'><div id='" + subModuleID + "'/></div>");
+                        $("#" + moduleID).append("<div class='panel-body '><div id='" + subModuleID + "'/></div>");
 
                         //Load content into the holder
                         $("#" + subModuleID).load(determineContentLocation(controllerData.Type), function () {

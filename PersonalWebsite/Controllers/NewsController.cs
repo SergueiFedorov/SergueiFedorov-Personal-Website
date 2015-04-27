@@ -13,6 +13,7 @@ namespace PersonalWebsite.Controllers
         {
             Models.NewsCollection collection = new Models.NewsCollection();
             collection.Items = (from c in new PersonalWebsite.DB.DatabaseContextDataContext().News
+                                orderby c.PostedDate descending
                                 select new Models.NewsModel
                                 {
                                     PostedDate = c.PostedDate,
