@@ -57,3 +57,30 @@ C:\Users\sfedo_000\Documents\Visual Studio 2013\Projects\PersonalWebsite\Persona
 C:\Users\sfedo_000\Documents\Visual Studio 2013\Projects\PersonalWebsite\PersonalWebsite\obj\Debug\PersonalWebsite.dll
 C:\Users\sfedo_000\Documents\Visual Studio 2013\Projects\PersonalWebsite\PersonalWebsite\obj\Debug\PersonalWebsite.pdb
 C:\Users\sfedo_000\Documents\Visual Studio 2013\Projects\PersonalWebsite\PersonalWebsite\obj\Debug\PersonalWebsite.csprojResolveAssemblyReference.cache
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\obj\Debug\PersonalWebsite.csprojResolveAssemblyReference.cache
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\PersonalWebsite.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\PersonalWebsite.pdb
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\Antlr3.Runtime.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\EntityFramework.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\Newtonsoft.Json.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.Mvc.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.Optimization.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.Providers.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.Razor.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.WebPages.Deployment.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.WebPages.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.WebPages.Razor.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\WebGrease.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\Antlr3.Runtime.pdb
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\Newtonsoft.Json.xml
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.Optimization.xml
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\EntityFramework.xml
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.Mvc.xml
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.Razor.xml
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.WebPages.xml
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.WebPages.Deployment.xml
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\bin\System.Web.WebPages.Razor.xml
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\obj\Debug\PersonalWebsite.dll
+C:\Users\sfedo_000\SergueiFedorov-Personal-Website\PersonalWebsite\obj\Debug\PersonalWebsite.pdb

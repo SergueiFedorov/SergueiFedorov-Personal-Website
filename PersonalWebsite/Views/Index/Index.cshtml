@@ -2,8 +2,10 @@
     ViewBag.Title = "Index";
 }
 
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
 <script type="text/javascript">
 
     //All this needs to be moved into the API somehow
@@ -26,7 +28,7 @@
                 }
             case "HOW_SITE_WORKS":
                 {
-                    return "How This Site Works";
+                    return "<span class='glyphicon glyphicon-info-sign'/> How This Site Works";
                 }
         }
     }
@@ -64,12 +66,12 @@
                 var moduleID = "MODULE-" + index;
                 
                 //Add the module container to the page
-                $(".Main").append("<div class='moduleElement' id='" + moduleID + "' style='width: " + currentElement.Width + "px; '></div>");
+                $(".Main").append("<div class='moduleElement panel panel-default' id='" + moduleID + "' style='width: " + currentElement.Width + "px; '></div>");
 
                 //Call the controller for this particular module
                 $.get(currentElement.DataController, '', function (controllerData) {
 
-                    $("#" + moduleID).append("<div class='ModuleTitle'>" + determineContentTitle(controllerData.Type) + " </div>");
+                    $("#" + moduleID).append("<div class='panel-heading'><h3 class='panel-title'> " + determineContentTitle(controllerData.Type) + " </div></div>");
 
                     //Get the internal items
                     $.each(controllerData.Items, function (controllerItemIndex, controllerItem) {
@@ -79,13 +81,11 @@
                         var subModuleID = moduleID + "-" + controllerItemIndex;
 
                         //Append a holder div
-                        $("#" + moduleID).append("<div id='" + subModuleID + "'/>");
+                        $("#" + moduleID).append("<div class='panel-body'><div id='" + subModuleID + "'/></div>");
 
                         //Load content into the holder
                         $("#" + subModuleID).load(determineContentLocation(controllerData.Type), function () {
                             var content = $(this).html();
-
-                            console.log(controllerData.Type);
 
                             //Determine the type of content to process
                             if (controllerData.Type == "NEWS_COLLECTION") {

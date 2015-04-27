@@ -20,7 +20,7 @@ namespace PersonalWebsite.Controllers
             {
                 new Models.DisplayItemModel() { Width = 600, DataController="news/getMainNews" },
                 new Models.DisplayItemModel() { Width = 300, DataController="about/getProfile" },
-                new Models.DisplayItemModel() { Width = 200, DataController="SiteInformation/getHowThisSiteWorks" },
+                new Models.DisplayItemModel() { Width = 300, DataController="SiteInformation/getHowThisSiteWorks" },
             };
 
             return Json(models, JsonRequestBehavior.AllowGet);
