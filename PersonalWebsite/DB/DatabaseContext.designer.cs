@@ -44,12 +44,6 @@ namespace PersonalWebsite.DB
     partial void DeleteLinkLogo(LinkLogo instance);
     #endregion
 		
-		public DatabaseContextDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["SQLAzureConnection"].ConnectionString, mappingSource)
-		{
-			OnCreated();
-		}
-		
 		public DatabaseContextDataContext(string connection) : 
 				base(connection, mappingSource)
 		{

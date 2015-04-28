@@ -1,6 +1,7 @@
 ﻿using PersonalWebsite.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,7 +21,7 @@ namespace PersonalWebsite.Controllers
         [HttpGet]
         public JsonResult Items()
         {
-            PersonalWebsite.DB.DatabaseContextDataContext context = new PersonalWebsite.DB.DatabaseContextDataContext();
+            PersonalWebsite.DB.DatabaseContextDataContext context = new PersonalWebsite.DB.DatabaseContextDataContext(ConfigurationManager.ConnectionStrings["DBConnection"].ToString());
 
             var result =  (from portfolio in context.Portfolios
                            select new

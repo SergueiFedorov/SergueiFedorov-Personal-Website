@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,7 +13,7 @@ namespace PersonalWebsite.Controllers
         public JsonResult getMainNews()
         {
             Models.NewsCollection collection = new Models.NewsCollection();
-            collection.Items = (from c in new PersonalWebsite.DB.DatabaseContextDataContext().News
+            collection.Items = (from c in new PersonalWebsite.DB.DatabaseContextDataContext(ConfigurationManager.ConnectionStrings["DBConnection"].ToString()).News
                                 orderby c.PostedDate descending
                                 select new Models.NewsModel
                                 {
