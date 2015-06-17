@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Serguei Fedorov Resume";
+}
+
+<style>
+    td{
+        padding: 10px;
+    }
+
+    h2, h3, h4, h5 { display: inline }
+
+</style>
+
+<script src="~/Content/JS/ResumeConstructor.js" type="text/javascript"></script>
+
+<script>
+    ConstructResume(document);
+
+    $(document).ready(function () {
+        $("#ConvertToPDFButton").on("click", function () {
+            window.open("/Resume/PDF", '_blank');
+        });
+    });
+</script>
+
+<div class="panel panel-default" id="ResumeHolder" style=" float:left; margin-left: 10px; max-width:800px">
+    <div class='panel-heading'>
+        Resume
+    </div>
+    <div class="panel-body" style="padding: 30px;">
+        <div class="bs-docs-grid " id="ResumeGrid" style="">
+            <div class="row show-grid" style="text-align:center" name="ResumeName">
+            </div>
+            <div class="row show-grid" style="text-align:center" name="ResumeAddress">
+            </div>
+            <div class="row show-grid" style="text-align:center" name="ResumeEmail">
+            </div>
+            <div class="row show-grid" style="text-align:center" name="ResumePhone">
+            </div>
+            <div class="row show-grid" id="ContactDetails" style="border-color:transparent; border-bottom-color:black; border-style:solid; border-width:1px;">
+                <h3>Technical Skills</h3>
+            </div>
+            <div class="row show-grid" id="ContactDetails" style="text-align:center" name="">
+                <table style="width:100%" name="TechnicalSkills"></table>
+            </div>
+            <div class="row show-grid" id="ContactDetails" style="border-color:transparent; border-bottom-color:black; border-style:solid; border-width:1px;">
+                <h3>Work Experience</h3>
+            </div>
+            <div class="row show-grid" id="ContactDetails" name="WorkExperience">
+
+            </div>
+            <div class="row show-grid" id="ContactDetails" style="border-color:transparent; border-bottom-color:black; border-style:solid; border-width:1px; margin-top:10px;">
+                <h3>Other Experience</h3>
+            </div>
+            <div class="row show-grid" id="ContactDetails" name="OtherExperience">
+
+            </div>
+            <div class="row show-grid" id="ContactDetails" style="border-color:transparent; border-bottom-color:black; border-style:solid; border-width:1px;  margin-top:10px;">
+                <h3>Education</h3>
+            </div>
+            <div class="row show-grid" id="ContactDetails" name="Education">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="float:left; margin-left: 10px; max-width:300px;">
+    <div class="panel panel-default">
+        <div class='panel-heading'>
+            Frontend Resume Construction
+        </div>
+        <div class="panel-body">
+            This resume is constructed by producing a GET call to <a href="Resume/Data">Resume/Data</a> and constructing the resume dynamically based on the JSON (using JavaScript)
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class='panel-heading'>
+            Backend Resume Construction
+        </div>
+        <div class="panel-body">
+            This resume is broken down into 14 tables which are joined in order to produce each resume section (such as work experience). This approach allows me to to construct multiple resumes through building blocks. Right now this page displays my main resume, but in the future I will be adding multiple resumes which reuse the same data as building blocks.
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class='panel-heading'>
+            PDF
+        </div>
+        <div class="panel-body">
+            <button type="button" id="ConvertToPDFButton" class="btn btn-default btn-lg">
+                Convert To PDF
+            </button>
+        </div>
+    </div>
+</div>

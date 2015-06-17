@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="leftMostPanel" style="float:left; width: 300px;">
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.get("https://api.stackexchange.com/2.2/users/1260028?order=desc&sort=reputation&site=stackoverflow", function (data) {
+            $.get("/Content/HTMLElements/StackExchangeProfile.html", function (html) {
+
+                console.log(data.items[0]);
+
+                html = html.replace("__BRONZE_RATING__", data.items[0].badge_counts.bronze);
+                html = html.replace("__SILVER_RATING__", data.items[0].badge_counts.silver);
+                html = html.replace("__GOLD_RATING__", data.items[0].badge_counts.gold);
+                html = html.replace("__REPUTATION_RATING__", data.items[0].reputation);
+
+                $(html).prependTo("#leftMostPanel");
+            });
+        });
+
+        $.get("https://api.stackexchange.com/2.2/users/1260028/questions?order=desc&sort=activity&site=stackoverflow", function (data) {
+
+            var questionsHolder = $("<div class=\"panel panel-default\" style=\"width:300px; margin-left: 10px;\"></div>");
+
+            $.each(data.items, function (index, item) {
+                $.get("/Content/HTMLElements/StackExchangeQuestion.html", function(html)
+                {
+
+                    html = html.replace("__QUESTION_LINK__", item.link);
+                    html = html.replace("__QUESTION_TITLE__", item.title);
+
+                    var createDate = new Date(0);
+                    createDate.setUTCSeconds(item.creation_date);
+
+                    html = html.replace("__QUESTION_DATE__", createDate.toDateString());
+
+                    $(html).appendTo(questionsHolder);
+                })
+
+            });
+
+            questionsHolder.appendTo("#leftMostPanel");
+        });
+    });
+</script>
