@@ -41,16 +41,6 @@ namespace PersonalWebsite.Controllers
                            });
 
             return Json(result, JsonRequestBehavior.AllowGet);
-
-            /*
-            List<PortfolioModel> collection = new List<PortfolioModel>
-            {
-                new PortfolioModel { Title = "test", Text = "Test", Image = "http://thegypsynurse.com/wp-content/uploads/2012/06/portfolio.png" },
-                new PortfolioModel { Title = "test", Text = "Test", Image = "http://thegypsynurse.com/wp-content/uploads/2012/06/portfolio.png" },
-                new PortfolioModel { Title = "test", Text = "Test", Image = "http://thegypsynurse.com/wp-content/uploads/2012/06/portfolio.png" },
-            };*/
-
-            //return Json(collection, JsonRequestBehavior.AllowGet);
         }
 
     }

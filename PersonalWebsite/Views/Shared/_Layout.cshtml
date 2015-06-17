@@ -4,16 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Site.css" rel="stylesheet">
 
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        a {
+            text-decoration : none;
+            color: white;
+        }
+    </style>
+
+    @*@Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/")*@
 </head>
 <body>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
     <div class="Main">
         <div class="MainNavigation">
@@ -28,10 +35,11 @@
     </div>
     <div class="Footer">
         <div class="FooterElement">
-                API | Site Source Code | Source Code Documentation<br />
-                Site Created By Serguei Fedorov
+             <a href="https://github.com/SergueiFedorov/SergueiFedorov-Personal-Website/wiki/API"> API </a> | <a href="https://github.com/SergueiFedorov/SergueiFedorov-Personal-Website">Site Source Code</a> | <a href="https://github.com/SergueiFedorov/SergueiFedorov-Personal-Website/wiki">Documentation</a><br />
+              Site Created By Serguei Fedorov
         </div>
     </div>
+    <div style="height: 50px;"> </div>
 </body>
 </html>
 

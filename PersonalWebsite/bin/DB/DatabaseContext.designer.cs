@@ -42,7 +42,58 @@ namespace PersonalWebsite.DB
     partial void InsertLinkLogo(LinkLogo instance);
     partial void UpdateLinkLogo(LinkLogo instance);
     partial void DeleteLinkLogo(LinkLogo instance);
+    partial void InsertResume(Resume instance);
+    partial void UpdateResume(Resume instance);
+    partial void DeleteResume(Resume instance);
+    partial void InsertResumeWorkExperienceDescription(ResumeWorkExperienceDescription instance);
+    partial void UpdateResumeWorkExperienceDescription(ResumeWorkExperienceDescription instance);
+    partial void DeleteResumeWorkExperienceDescription(ResumeWorkExperienceDescription instance);
+    partial void InsertResumeEducationConnection(ResumeEducationConnection instance);
+    partial void UpdateResumeEducationConnection(ResumeEducationConnection instance);
+    partial void DeleteResumeEducationConnection(ResumeEducationConnection instance);
+    partial void InsertResumeOtherExperience(ResumeOtherExperience instance);
+    partial void UpdateResumeOtherExperience(ResumeOtherExperience instance);
+    partial void DeleteResumeOtherExperience(ResumeOtherExperience instance);
+    partial void InsertResumeOtherExperienceConnection(ResumeOtherExperienceConnection instance);
+    partial void UpdateResumeOtherExperienceConnection(ResumeOtherExperienceConnection instance);
+    partial void DeleteResumeOtherExperienceConnection(ResumeOtherExperienceConnection instance);
+    partial void InsertResumeOtherExperienceDescriptionDetail(ResumeOtherExperienceDescriptionDetail instance);
+    partial void UpdateResumeOtherExperienceDescriptionDetail(ResumeOtherExperienceDescriptionDetail instance);
+    partial void DeleteResumeOtherExperienceDescriptionDetail(ResumeOtherExperienceDescriptionDetail instance);
+    partial void InsertResumeOtherExperienceDescription(ResumeOtherExperienceDescription instance);
+    partial void UpdateResumeOtherExperienceDescription(ResumeOtherExperienceDescription instance);
+    partial void DeleteResumeOtherExperienceDescription(ResumeOtherExperienceDescription instance);
+    partial void InsertResumeTechnicalGroupConnection(ResumeTechnicalGroupConnection instance);
+    partial void UpdateResumeTechnicalGroupConnection(ResumeTechnicalGroupConnection instance);
+    partial void DeleteResumeTechnicalGroupConnection(ResumeTechnicalGroupConnection instance);
+    partial void InsertResumeTechnicalSkillGroup(ResumeTechnicalSkillGroup instance);
+    partial void UpdateResumeTechnicalSkillGroup(ResumeTechnicalSkillGroup instance);
+    partial void DeleteResumeTechnicalSkillGroup(ResumeTechnicalSkillGroup instance);
+    partial void InsertResumeTechnicalSkillItem(ResumeTechnicalSkillItem instance);
+    partial void UpdateResumeTechnicalSkillItem(ResumeTechnicalSkillItem instance);
+    partial void DeleteResumeTechnicalSkillItem(ResumeTechnicalSkillItem instance);
+    partial void InsertResumeWorkExperience(ResumeWorkExperience instance);
+    partial void UpdateResumeWorkExperience(ResumeWorkExperience instance);
+    partial void DeleteResumeWorkExperience(ResumeWorkExperience instance);
+    partial void InsertResumeWorkExperienceConnection(ResumeWorkExperienceConnection instance);
+    partial void UpdateResumeWorkExperienceConnection(ResumeWorkExperienceConnection instance);
+    partial void DeleteResumeWorkExperienceConnection(ResumeWorkExperienceConnection instance);
+    partial void InsertResumeWorkExperienceDescriptionDetail(ResumeWorkExperienceDescriptionDetail instance);
+    partial void UpdateResumeWorkExperienceDescriptionDetail(ResumeWorkExperienceDescriptionDetail instance);
+    partial void DeleteResumeWorkExperienceDescriptionDetail(ResumeWorkExperienceDescriptionDetail instance);
+    partial void InsertDegreeTypeCode(DegreeTypeCode instance);
+    partial void UpdateDegreeTypeCode(DegreeTypeCode instance);
+    partial void DeleteDegreeTypeCode(DegreeTypeCode instance);
+    partial void InsertResumeEducation(ResumeEducation instance);
+    partial void UpdateResumeEducation(ResumeEducation instance);
+    partial void DeleteResumeEducation(ResumeEducation instance);
     #endregion
+		
+		public DatabaseContextDataContext() : 
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DBConnection"].ConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public DatabaseContextDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -97,6 +148,126 @@ namespace PersonalWebsite.DB
 			get
 			{
 				return this.GetTable<LinkLogo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Resume> Resumes
+		{
+			get
+			{
+				return this.GetTable<Resume>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeWorkExperienceDescription> ResumeWorkExperienceDescriptions
+		{
+			get
+			{
+				return this.GetTable<ResumeWorkExperienceDescription>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeEducationConnection> ResumeEducationConnections
+		{
+			get
+			{
+				return this.GetTable<ResumeEducationConnection>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeOtherExperience> ResumeOtherExperiences
+		{
+			get
+			{
+				return this.GetTable<ResumeOtherExperience>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeOtherExperienceConnection> ResumeOtherExperienceConnections
+		{
+			get
+			{
+				return this.GetTable<ResumeOtherExperienceConnection>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeOtherExperienceDescriptionDetail> ResumeOtherExperienceDescriptionDetails
+		{
+			get
+			{
+				return this.GetTable<ResumeOtherExperienceDescriptionDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeOtherExperienceDescription> ResumeOtherExperienceDescriptions
+		{
+			get
+			{
+				return this.GetTable<ResumeOtherExperienceDescription>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeTechnicalGroupConnection> ResumeTechnicalGroupConnections
+		{
+			get
+			{
+				return this.GetTable<ResumeTechnicalGroupConnection>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeTechnicalSkillGroup> ResumeTechnicalSkillGroups
+		{
+			get
+			{
+				return this.GetTable<ResumeTechnicalSkillGroup>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeTechnicalSkillItem> ResumeTechnicalSkillItems
+		{
+			get
+			{
+				return this.GetTable<ResumeTechnicalSkillItem>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeWorkExperience> ResumeWorkExperiences
+		{
+			get
+			{
+				return this.GetTable<ResumeWorkExperience>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeWorkExperienceConnection> ResumeWorkExperienceConnections
+		{
+			get
+			{
+				return this.GetTable<ResumeWorkExperienceConnection>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeWorkExperienceDescriptionDetail> ResumeWorkExperienceDescriptionDetails
+		{
+			get
+			{
+				return this.GetTable<ResumeWorkExperienceDescriptionDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DegreeTypeCode> DegreeTypeCodes
+		{
+			get
+			{
+				return this.GetTable<DegreeTypeCode>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ResumeEducation> ResumeEducations
+		{
+			get
+			{
+				return this.GetTable<ResumeEducation>();
 			}
 		}
 	}
@@ -798,6 +969,1896 @@ namespace PersonalWebsite.DB
 						this._LinkLogoCode = default(string);
 					}
 					this.SendPropertyChanged("PortfolioLink");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Resume")]
+	public partial class Resume : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private string _Address;
+		
+		private string _Phone;
+		
+		private string _Email;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    #endregion
+		
+		public Resume()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(50)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(50)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeWorkExperienceDescriptions")]
+	public partial class ResumeWorkExperienceDescription : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Description;
+		
+		private int _WorkExperienceID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnWorkExperienceIDChanging(int value);
+    partial void OnWorkExperienceIDChanged();
+    #endregion
+		
+		public ResumeWorkExperienceDescription()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WorkExperienceID", DbType="Int NOT NULL")]
+		public int WorkExperienceID
+		{
+			get
+			{
+				return this._WorkExperienceID;
+			}
+			set
+			{
+				if ((this._WorkExperienceID != value))
+				{
+					this.OnWorkExperienceIDChanging(value);
+					this.SendPropertyChanging();
+					this._WorkExperienceID = value;
+					this.SendPropertyChanged("WorkExperienceID");
+					this.OnWorkExperienceIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeEducationConnections")]
+	public partial class ResumeEducationConnection : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _ResumeID;
+		
+		private int _ResumeEducationID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnResumeIDChanging(int value);
+    partial void OnResumeIDChanged();
+    partial void OnResumeEducationIDChanging(int value);
+    partial void OnResumeEducationIDChanged();
+    #endregion
+		
+		public ResumeEducationConnection()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResumeID", DbType="Int NOT NULL")]
+		public int ResumeID
+		{
+			get
+			{
+				return this._ResumeID;
+			}
+			set
+			{
+				if ((this._ResumeID != value))
+				{
+					this.OnResumeIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResumeID = value;
+					this.SendPropertyChanged("ResumeID");
+					this.OnResumeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResumeEducationID", DbType="Int NOT NULL")]
+		public int ResumeEducationID
+		{
+			get
+			{
+				return this._ResumeEducationID;
+			}
+			set
+			{
+				if ((this._ResumeEducationID != value))
+				{
+					this.OnResumeEducationIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResumeEducationID = value;
+					this.SendPropertyChanged("ResumeEducationID");
+					this.OnResumeEducationIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeOtherExperience")]
+	public partial class ResumeOtherExperience : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Title;
+		
+		private string _Platform;
+		
+		private string _Role;
+		
+		private System.DateTime _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnPlatformChanging(string value);
+    partial void OnPlatformChanged();
+    partial void OnRoleChanging(string value);
+    partial void OnRoleChanged();
+    partial void OnStartDateChanging(System.DateTime value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanged();
+    #endregion
+		
+		public ResumeOtherExperience()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this.OnTitleChanging(value);
+					this.SendPropertyChanging();
+					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Platform", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Platform
+		{
+			get
+			{
+				return this._Platform;
+			}
+			set
+			{
+				if ((this._Platform != value))
+				{
+					this.OnPlatformChanging(value);
+					this.SendPropertyChanging();
+					this._Platform = value;
+					this.SendPropertyChanged("Platform");
+					this.OnPlatformChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Role", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Role
+		{
+			get
+			{
+				return this._Role;
+			}
+			set
+			{
+				if ((this._Role != value))
+				{
+					this.OnRoleChanging(value);
+					this.SendPropertyChanging();
+					this._Role = value;
+					this.SendPropertyChanged("Role");
+					this.OnRoleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="DateTime NOT NULL")]
+		public System.DateTime StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeOtherExperienceConnection")]
+	public partial class ResumeOtherExperienceConnection : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _ResumeID;
+		
+		private int _ResumeOtherExperienceID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnResumeIDChanging(int value);
+    partial void OnResumeIDChanged();
+    partial void OnResumeOtherExperienceIDChanging(int value);
+    partial void OnResumeOtherExperienceIDChanged();
+    #endregion
+		
+		public ResumeOtherExperienceConnection()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResumeID", DbType="Int NOT NULL")]
+		public int ResumeID
+		{
+			get
+			{
+				return this._ResumeID;
+			}
+			set
+			{
+				if ((this._ResumeID != value))
+				{
+					this.OnResumeIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResumeID = value;
+					this.SendPropertyChanged("ResumeID");
+					this.OnResumeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResumeOtherExperienceID", DbType="Int NOT NULL")]
+		public int ResumeOtherExperienceID
+		{
+			get
+			{
+				return this._ResumeOtherExperienceID;
+			}
+			set
+			{
+				if ((this._ResumeOtherExperienceID != value))
+				{
+					this.OnResumeOtherExperienceIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResumeOtherExperienceID = value;
+					this.SendPropertyChanged("ResumeOtherExperienceID");
+					this.OnResumeOtherExperienceIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeOtherExperienceDescriptionDetails")]
+	public partial class ResumeOtherExperienceDescriptionDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Text;
+		
+		private int _OtherExperienceDescriptionID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTextChanging(string value);
+    partial void OnTextChanged();
+    partial void OnOtherExperienceDescriptionIDChanging(int value);
+    partial void OnOtherExperienceDescriptionIDChanged();
+    #endregion
+		
+		public ResumeOtherExperienceDescriptionDetail()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="VarChar(300) NOT NULL", CanBeNull=false)]
+		public string Text
+		{
+			get
+			{
+				return this._Text;
+			}
+			set
+			{
+				if ((this._Text != value))
+				{
+					this.OnTextChanging(value);
+					this.SendPropertyChanging();
+					this._Text = value;
+					this.SendPropertyChanged("Text");
+					this.OnTextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OtherExperienceDescriptionID", DbType="Int NOT NULL")]
+		public int OtherExperienceDescriptionID
+		{
+			get
+			{
+				return this._OtherExperienceDescriptionID;
+			}
+			set
+			{
+				if ((this._OtherExperienceDescriptionID != value))
+				{
+					this.OnOtherExperienceDescriptionIDChanging(value);
+					this.SendPropertyChanging();
+					this._OtherExperienceDescriptionID = value;
+					this.SendPropertyChanged("OtherExperienceDescriptionID");
+					this.OnOtherExperienceDescriptionIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeOtherExperienceDescriptions")]
+	public partial class ResumeOtherExperienceDescription : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _GeneralDescription;
+		
+		private int _OtherExperienceID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnGeneralDescriptionChanging(string value);
+    partial void OnGeneralDescriptionChanged();
+    partial void OnOtherExperienceIDChanging(int value);
+    partial void OnOtherExperienceIDChanged();
+    #endregion
+		
+		public ResumeOtherExperienceDescription()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GeneralDescription", DbType="VarChar(300) NOT NULL", CanBeNull=false)]
+		public string GeneralDescription
+		{
+			get
+			{
+				return this._GeneralDescription;
+			}
+			set
+			{
+				if ((this._GeneralDescription != value))
+				{
+					this.OnGeneralDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._GeneralDescription = value;
+					this.SendPropertyChanged("GeneralDescription");
+					this.OnGeneralDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OtherExperienceID", DbType="Int NOT NULL")]
+		public int OtherExperienceID
+		{
+			get
+			{
+				return this._OtherExperienceID;
+			}
+			set
+			{
+				if ((this._OtherExperienceID != value))
+				{
+					this.OnOtherExperienceIDChanging(value);
+					this.SendPropertyChanging();
+					this._OtherExperienceID = value;
+					this.SendPropertyChanged("OtherExperienceID");
+					this.OnOtherExperienceIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeTechnicalGroupConnection")]
+	public partial class ResumeTechnicalGroupConnection : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _ResumeID;
+		
+		private int _ResumeTechnicalSkillGroupID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnResumeIDChanging(int value);
+    partial void OnResumeIDChanged();
+    partial void OnResumeTechnicalSkillGroupIDChanging(int value);
+    partial void OnResumeTechnicalSkillGroupIDChanged();
+    #endregion
+		
+		public ResumeTechnicalGroupConnection()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResumeID", DbType="Int NOT NULL")]
+		public int ResumeID
+		{
+			get
+			{
+				return this._ResumeID;
+			}
+			set
+			{
+				if ((this._ResumeID != value))
+				{
+					this.OnResumeIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResumeID = value;
+					this.SendPropertyChanged("ResumeID");
+					this.OnResumeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResumeTechnicalSkillGroupID", DbType="Int NOT NULL")]
+		public int ResumeTechnicalSkillGroupID
+		{
+			get
+			{
+				return this._ResumeTechnicalSkillGroupID;
+			}
+			set
+			{
+				if ((this._ResumeTechnicalSkillGroupID != value))
+				{
+					this.OnResumeTechnicalSkillGroupIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResumeTechnicalSkillGroupID = value;
+					this.SendPropertyChanged("ResumeTechnicalSkillGroupID");
+					this.OnResumeTechnicalSkillGroupIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeTechnicalSkillGroup")]
+	public partial class ResumeTechnicalSkillGroup : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Title;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    #endregion
+		
+		public ResumeTechnicalSkillGroup()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this.OnTitleChanging(value);
+					this.SendPropertyChanging();
+					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeTechnicalSkillItem")]
+	public partial class ResumeTechnicalSkillItem : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Text;
+		
+		private int _ResumeTechnicalGroupID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTextChanging(string value);
+    partial void OnTextChanged();
+    partial void OnResumeTechnicalGroupIDChanging(int value);
+    partial void OnResumeTechnicalGroupIDChanged();
+    #endregion
+		
+		public ResumeTechnicalSkillItem()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Text
+		{
+			get
+			{
+				return this._Text;
+			}
+			set
+			{
+				if ((this._Text != value))
+				{
+					this.OnTextChanging(value);
+					this.SendPropertyChanging();
+					this._Text = value;
+					this.SendPropertyChanged("Text");
+					this.OnTextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResumeTechnicalGroupID", DbType="Int NOT NULL")]
+		public int ResumeTechnicalGroupID
+		{
+			get
+			{
+				return this._ResumeTechnicalGroupID;
+			}
+			set
+			{
+				if ((this._ResumeTechnicalGroupID != value))
+				{
+					this.OnResumeTechnicalGroupIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResumeTechnicalGroupID = value;
+					this.SendPropertyChanged("ResumeTechnicalGroupID");
+					this.OnResumeTechnicalGroupIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeWorkExperience")]
+	public partial class ResumeWorkExperience : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Employer;
+		
+		private string _Title;
+		
+		private System.DateTime _StartDate;
+		
+		private string _EndDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnEmployerChanging(string value);
+    partial void OnEmployerChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnStartDateChanging(System.DateTime value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(string value);
+    partial void OnEndDateChanged();
+    #endregion
+		
+		public ResumeWorkExperience()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Employer", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Employer
+		{
+			get
+			{
+				return this._Employer;
+			}
+			set
+			{
+				if ((this._Employer != value))
+				{
+					this.OnEmployerChanging(value);
+					this.SendPropertyChanging();
+					this._Employer = value;
+					this.SendPropertyChanged("Employer");
+					this.OnEmployerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this.OnTitleChanging(value);
+					this.SendPropertyChanging();
+					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="DateTime NOT NULL")]
+		public System.DateTime StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="NChar(10)")]
+		public string EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeWorkExperienceConnection")]
+	public partial class ResumeWorkExperienceConnection : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _ResumeID;
+		
+		private int _ResumeWorkExperienceID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnResumeIDChanging(int value);
+    partial void OnResumeIDChanged();
+    partial void OnResumeWorkExperienceIDChanging(int value);
+    partial void OnResumeWorkExperienceIDChanged();
+    #endregion
+		
+		public ResumeWorkExperienceConnection()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResumeID", DbType="Int NOT NULL")]
+		public int ResumeID
+		{
+			get
+			{
+				return this._ResumeID;
+			}
+			set
+			{
+				if ((this._ResumeID != value))
+				{
+					this.OnResumeIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResumeID = value;
+					this.SendPropertyChanged("ResumeID");
+					this.OnResumeIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResumeWorkExperienceID", DbType="Int NOT NULL")]
+		public int ResumeWorkExperienceID
+		{
+			get
+			{
+				return this._ResumeWorkExperienceID;
+			}
+			set
+			{
+				if ((this._ResumeWorkExperienceID != value))
+				{
+					this.OnResumeWorkExperienceIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResumeWorkExperienceID = value;
+					this.SendPropertyChanged("ResumeWorkExperienceID");
+					this.OnResumeWorkExperienceIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeWorkExperienceDescriptionDetails")]
+	public partial class ResumeWorkExperienceDescriptionDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Text;
+		
+		private int _ResumeWorkExperienceDescriptionsID;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTextChanging(string value);
+    partial void OnTextChanged();
+    partial void OnResumeWorkExperienceDescriptionsIDChanging(int value);
+    partial void OnResumeWorkExperienceDescriptionsIDChanged();
+    #endregion
+		
+		public ResumeWorkExperienceDescriptionDetail()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Text
+		{
+			get
+			{
+				return this._Text;
+			}
+			set
+			{
+				if ((this._Text != value))
+				{
+					this.OnTextChanging(value);
+					this.SendPropertyChanging();
+					this._Text = value;
+					this.SendPropertyChanged("Text");
+					this.OnTextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResumeWorkExperienceDescriptionsID", DbType="Int NOT NULL")]
+		public int ResumeWorkExperienceDescriptionsID
+		{
+			get
+			{
+				return this._ResumeWorkExperienceDescriptionsID;
+			}
+			set
+			{
+				if ((this._ResumeWorkExperienceDescriptionsID != value))
+				{
+					this.OnResumeWorkExperienceDescriptionsIDChanging(value);
+					this.SendPropertyChanging();
+					this._ResumeWorkExperienceDescriptionsID = value;
+					this.SendPropertyChanged("ResumeWorkExperienceDescriptionsID");
+					this.OnResumeWorkExperienceDescriptionsIDChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DegreeTypeCodes")]
+	public partial class DegreeTypeCode : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _DegreeTypeCode1;
+		
+		private string _Description;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnDegreeTypeCode1Changing(string value);
+    partial void OnDegreeTypeCode1Changed();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    #endregion
+		
+		public DegreeTypeCode()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="DegreeTypeCode", Storage="_DegreeTypeCode1", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string DegreeTypeCode1
+		{
+			get
+			{
+				return this._DegreeTypeCode1;
+			}
+			set
+			{
+				if ((this._DegreeTypeCode1 != value))
+				{
+					this.OnDegreeTypeCode1Changing(value);
+					this.SendPropertyChanging();
+					this._DegreeTypeCode1 = value;
+					this.SendPropertyChanged("DegreeTypeCode1");
+					this.OnDegreeTypeCode1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ResumeEducation")]
+	public partial class ResumeEducation : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _DegreeTypeCode;
+		
+		private string _Description;
+		
+		private decimal _GPA;
+		
+		private string _University;
+		
+		private System.DateTime _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnDegreeTypeCodeChanging(string value);
+    partial void OnDegreeTypeCodeChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnGPAChanging(decimal value);
+    partial void OnGPAChanged();
+    partial void OnUniversityChanging(string value);
+    partial void OnUniversityChanged();
+    partial void OnStartDateChanging(System.DateTime value);
+    partial void OnStartDateChanged();
+    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanged();
+    #endregion
+		
+		public ResumeEducation()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DegreeTypeCode", DbType="Char(3) NOT NULL", CanBeNull=false)]
+		public string DegreeTypeCode
+		{
+			get
+			{
+				return this._DegreeTypeCode;
+			}
+			set
+			{
+				if ((this._DegreeTypeCode != value))
+				{
+					this.OnDegreeTypeCodeChanging(value);
+					this.SendPropertyChanging();
+					this._DegreeTypeCode = value;
+					this.SendPropertyChanged("DegreeTypeCode");
+					this.OnDegreeTypeCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GPA", DbType="Decimal(5,2) NOT NULL")]
+		public decimal GPA
+		{
+			get
+			{
+				return this._GPA;
+			}
+			set
+			{
+				if ((this._GPA != value))
+				{
+					this.OnGPAChanging(value);
+					this.SendPropertyChanging();
+					this._GPA = value;
+					this.SendPropertyChanged("GPA");
+					this.OnGPAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_University", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string University
+		{
+			get
+			{
+				return this._University;
+			}
+			set
+			{
+				if ((this._University != value))
+				{
+					this.OnUniversityChanging(value);
+					this.SendPropertyChanging();
+					this._University = value;
+					this.SendPropertyChanged("University");
+					this.OnUniversityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="DateTime NOT NULL")]
+		public System.DateTime StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this.OnStartDateChanging(value);
+					this.SendPropertyChanging();
+					this._StartDate = value;
+					this.SendPropertyChanged("StartDate");
+					this.OnStartDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
 				}
 			}
 		}

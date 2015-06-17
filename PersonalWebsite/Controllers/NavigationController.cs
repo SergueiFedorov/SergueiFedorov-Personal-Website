@@ -23,6 +23,7 @@ namespace PersonalWebsite.Controllers
             {
                 new LinksModel() { Link = root + "Index", Text = "Home" },
                 new LinksModel() { Link = root + "Portfolio", Text = "Portfolio" },
+                new LinksModel() { Link = root + "Resume", Text = "Resume" },
                 //new LinksModel() { Link = root + "About", Text = "About Me" },
                 //new LinksModel() { Link = root + "API", Text = "API" }
             };
